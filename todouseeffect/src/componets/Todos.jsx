@@ -6,7 +6,7 @@ const Todos = () => {
 
    const saveInfo = ()=>{
 
-    fetch("http://localhost:3004/todos",{
+    fetch("http://localhost:3000/todos",{
         method:"POST",
         headers:{
             "content-type": "application/json"
@@ -53,7 +53,7 @@ const Todos = () => {
 
     useEffect(()=>{
 
-        fetch("http://localhost:3004/todos?_page=1&_limit=4")
+        fetch("http://localhost:3000/todos?_page=1&_limit=4")
         .then((res)=>res.json())
         .then((data)=>{
         //   console.log(data)
@@ -74,6 +74,8 @@ const Todos = () => {
       {todos.map((el)=>(
          <div key={el.id}>{el.value}</div>
       ))}
+
+<h1>Show Timer </h1> 
     </div>
     <button onClick={()=> setTodos([])}>clear</button>
     </>
